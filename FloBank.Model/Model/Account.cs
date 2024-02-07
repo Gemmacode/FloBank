@@ -14,7 +14,7 @@ namespace FloBank.Model.Model
     internal class Account
     {
         [Key]
-        public string id {  get; set; }
+        public int id {  get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string AccountName { get; set; }
@@ -34,6 +34,7 @@ namespace FloBank.Model.Model
         public Account()
         {
             AccountNumberGenerated = Convert.ToString((long) rand.NextDouble() * 9_000_000_000L + 1_000_000_000L);
+            AccountName = $"{FirstName} {LastName}";
         }
         
        
