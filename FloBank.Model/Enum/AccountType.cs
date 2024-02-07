@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FloBank.Model
+namespace FloBank.Model.Enum
 {
-    internal class Enum
+    public enum AccountType
     {
+        Savings,
+        Current,
+        Corporate,
+        Govertment,
+        Fixed
     }
 }
