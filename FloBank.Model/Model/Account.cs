@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace FloBank.Model.Model
 {
     [Table("Accounts")]
-    internal class Account
+    public class Account
     {
         [Key]
         public int id {  get; set; }

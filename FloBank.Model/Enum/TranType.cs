@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace FloBank.Model.Enum
 {
-    public class TranType
+    public enum TranType
     {
-
+        Deposit,
+        Withrawal,
+        Transfer
     }
 }

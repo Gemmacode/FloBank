@@ -22,4 +22,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Flo.Data\FloBank.Data.csproj" />
+  </ItemGroup>
+
 </Project>
