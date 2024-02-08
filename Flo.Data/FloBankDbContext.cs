@@ -10,7 +10,7 @@ namespace FloBank.Data
 {
     public class FloBankDbContext : DbContext
     {
-        public FloBankDbContext(DbContextOptions options) : base(options)
+        public FloBankDbContext(DbContextOptions<FloBankDbContext> options) : base(options)
         {
 
         }

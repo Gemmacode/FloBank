@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FloBank.Model.Enum;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -20,8 +21,13 @@ namespace FloBank.Model.Model
         public string TransactionSourceAccount {  get; set; }   
         public string TransactionDestinationAccount { get;set; }
         public string TransactionParticulars { get; set;}
-        public TransType TransactionType { get; set; }
+        public TranType TransactionType { get; set; }
         public DateTime TransactionDate { get; set; }
 
+
+        public Transaction()
+        {
+            TransactionUniqueReference = $"{Guid.NewGuid().ToString().Replace("-", "").Substring(1,27)}";
+        }
     }
 }

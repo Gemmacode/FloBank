@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FloBank.Model.Enum
+namespace FloBank.Core.Services
 {
-    public enum TransStatus
+    public class TransactionService
     {
-        Success,
-        Failed,
-        Error
     }
 }
