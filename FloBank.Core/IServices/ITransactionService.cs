@@ -1,10 +1,5 @@
-﻿using Azure;
-using FloBank.Model.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FloBank.Model.Model;
+using Response = FloBank.Model.Model.Response;
 
 namespace FloBank.Core.IServices
 {
