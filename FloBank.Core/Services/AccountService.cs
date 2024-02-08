@@ -11,7 +11,7 @@ namespace FloBank.Core.Services
 {
     public class AccountService : IAccountService
     {
-        private readonly FloBankDbContext dbContext;
+        private readonly FloBankDbContext _db;
         public Account Authenticate(string AccountName, string Pin)
         {
             throw new NotImplementedException();
