@@ -97,7 +97,12 @@ namespace FloBank.Core.Services
 
         public Account GetById(int Id)
         {
-            throw new NotImplementedException();
+            var account = _db.Accounts.Where(x=>x.id== Id).FirstOrDefault();    
+            if (account == null)
+            {
+                return null
+            }
+            return account;
         }
 
         public void Update(Account account, string Pin = null)
