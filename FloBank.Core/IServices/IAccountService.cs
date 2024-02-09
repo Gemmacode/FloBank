@@ -9,7 +9,7 @@ namespace FloBank.Core.IServices
 {
     public interface IAccountService
     {
-        Account Authenticate(string AccountName, string Pin);
+        Account Authenticate(string AccountNumber, string Pin);
         IEnumerable<Account> GetAllAccounts();
         Account Create(Account account, string Pin, string ConfirmPin);
         void Update(Account account, string Pin = null);
