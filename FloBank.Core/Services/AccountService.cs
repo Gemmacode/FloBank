@@ -100,14 +100,48 @@ namespace FloBank.Core.Services
             var account = _db.Accounts.Where(x=>x.id== Id).FirstOrDefault();    
             if (account == null)
             {
-                return null
+                return null;
             }
             return account;
         }
 
         public void Update(Account account, string Pin = null)
         {
-            throw new NotImplementedException();
+            var accountUpdated = _db.Accounts.Where(x => x.Email == account.Email).SingleOrDefault();
+            if (accountUpdated == null)
+            {
+                throw new ApplicationException("Account does not Exist");
+                if (!string.IsNullOrWhiteSpace(account.Email))
+                {
+                    if (_db.Accounts.Any(x=> x.Email == account.Email)) 
+                    { 
+                        throw new ApplicationException("This Email" + account.Email +"Already Exist");   
+                    }
+                    accountUpdated.Email = account.Email;   
+
+                }
+
+                if (!string.IsNullOrWhiteSpace(account.phoneNumber))
+                {
+                    if (_db.Accounts.Any(x => x.phoneNumber == account.phoneNumber))
+                    {
+                        throw new ApplicationException("This PhoneNumber" + account.phoneNumber + "Already Exist");
+                    }
+                    accountUpdated.phoneNumber = account.phoneNumber;
+                }
+
+                if (!string.IsNullOrWhiteSpace(Pin))
+                {
+                    byte[] pinHash, pinSalt;
+                    CreatePinHash(Pin, out pinHash, out pinSalt);   
+                    accountUpdated.PinHash =pinHash;
+                    accountUpdated.PinSalt =pinSalt;
+                }
+
+                _db.Accounts.Update(accountUpdated);
+                _db.SaveChanges();  
+
+            }
         }
     }
 }
