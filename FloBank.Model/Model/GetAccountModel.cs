@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FloBank.Model.Model
 {
-    public class RegisterNewAccountModel
+    public class GetAccountModel
     {
     }
 }
